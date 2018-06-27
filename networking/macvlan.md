@@ -11,7 +11,7 @@ NETWORK ID          NAME                DRIVER              SCOPE
 root@ubuntu:~#
 ```
 
-<a href="https://asciinema.org/a/188971" target="_blank"><img src="https://asciinema.org/a/188971" /></a>
+<a href="https://asciinema.org/a/188971" target="_blank"><img src="https://asciinema.org/a/188971.png" /></a>
 
 My Network Configuration is quite simple. It has eth0 and eth1 interface. I will just use eth0.
 
