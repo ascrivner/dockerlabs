@@ -1,5 +1,9 @@
 # Understanding MacVLAN - The Easy Way
 
+
+
+<a href="https://asciinema.org/a/188971" target="_blank"><img src="https://asciinema.org/a/188971.png" /></a>
+
 Assume you have a clean Docker Host system with just 3 networks available – bridge, host and null
 
 ```
@@ -10,8 +14,6 @@ NETWORK ID          NAME                DRIVER              SCOPE
 2c510f91a22d        none                null                local
 root@ubuntu:~#
 ```
-
-<a href="https://asciinema.org/a/188971" target="_blank"><img src="https://asciinema.org/a/188971.png" /></a>
 
 My Network Configuration is quite simple. It has eth0 and eth1 interface. I will just use eth0.
 
