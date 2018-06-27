@@ -50,7 +50,7 @@ lo        Link encap:Local Loopback
 ## Step:3 – Creating MacVLAN network on top of eth0.
 
 ```
-docker network create -d macvlan --subnet=100.98.26.43/24 --gateway=100.98.26.1  -o parent=eth0 pub_net
+docker network create -d macvlan --subnet=100.98.26.100/24 --gateway=100.98.26.1  -o parent=eth0 pub_net
 ```
 
 ## Step-4: Verifying MacVLAN network
@@ -68,7 +68,7 @@ root@ubuntu:~#
 ## Step-5: Let us create a sample Docker Image and assign statics IP(ensure that it is from free pool)
 
 ```
-root@ubuntu:~# docker  run --net=pub_net --ip=100.98.26.47 -itd alpine /bin/sh
+root@ubuntu:~# docker  run --net=pub_net --ip=100.98.26.101 -itd alpine /bin/sh
 Unable to find image 'alpine:latest' locally
 latest: Pulling from library/alpine
 ff3a5c916c92: Pull complete
@@ -89,7 +89,7 @@ So, in our case, it will be:
 
 ```
 ip link add mac0 link eth0 type macvlan mode bridge
-ip addr add 100.98.26.38/24 dev mac0
+ip addr add 100.98.26.112/24 dev mac0
 ifconfig mac0 up
 ```
 
@@ -98,12 +98,9 @@ ifconfig mac0 up
 Let us try creating container and pinging:
 
 ```
-root@ubuntu:~# docker run --net=pub_net -d --ip=100.98.26.53 -p 81:80 nginx
+root@ubuntu:~# docker run --net=pub_net -d --ip=100.98.26.113 -p 81:80 nginx
 10146a39d7d8839b670fc5666950c0e265037105e61b0382575466cc62d34824
-root@ubuntu:~# ping 100.98.26.53
-PING 100.98.26.53 (100.98.26.53) 56(84) bytes of data.
-64 bytes from 100.98.26.53: icmp_seq=1 ttl=64 time=1.00 ms
-64 bytes from 100.98.26.53: icmp_seq=2 ttl=64 time=0.501 ms
+
 ```
 
 Wow ! It just worked.
