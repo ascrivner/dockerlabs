@@ -1,6 +1,6 @@
 # Lab: Distribution and Trust
 
-> **Difficulty**: Intermediate
+> **Difficulty**: Advanced
 
 > **Time**: Approximately 30 minutes
 
